@@ -74,14 +74,12 @@ class AppWindow(Window):
 		self.Content = self.screenLoader.getScreen("frontend.xaml")
 		self.tabs = {0:["log.xaml", self.logSelected]}
 
-		info = FileInfo("cw.png")
+		info = FileInfo("logo.png")
 
-		self.Content.FindName("imgCwLogo").Source = BitmapImage(Uri("file://"+info.DirectoryName+"/cw.png", UriKind.Absolute))
+		self.Content.FindName("imgLogo").Source = BitmapImage(Uri("file://"+info.DirectoryName+"/logo.png", UriKind.Absolute))
 		self.tabControl = self.Content.FindName("tabs")
 		self.setupTabs()
-		#self.logdir = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + "\\ConnectWise\\Outlook Sync\\logs"
-		#self.logfile = self.logdir + "\\log.txt"
-		self.logdir = "E:\\cwsrc\\cw\\ServerStaging\\App\\logs"
+		self.logdir = "E:\\github\\log-ui\\logs"
 		self.logfile = self.logdir + "\\server.log"
 		self.tabIndex = 0
 
